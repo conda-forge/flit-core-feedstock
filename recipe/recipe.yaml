@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.1.0"
-  python_min: "3.8"
+  version: "4.2.0"
 
 package:
   name: flit-core
@@ -10,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/flit/flit-${{ version }}.tar.gz
-  sha256: 18b463c435db03b8cbecf139b6b0bb285b2dfd8a7e623558136abd66f4a04af4
+  sha256: 4ab00f544721a241b15e634648f1bfac7268a0ec637f106ce3150939c2e2f4d9
   target_directory: source
 
 build:
@@ -34,7 +33,9 @@ tests:
         - flit_core
         - flit_core.common
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   license: BSD-3-Clause
